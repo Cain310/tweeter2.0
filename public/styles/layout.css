@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -15,11 +16,108 @@ html {
  */
 
 body {
+  font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
   color: #244751;
-  background-color: #eee;
+  background-color: #003E7E;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main.container {
+  margin: auto;
+  /* margin-left: 33.33%;
+  margin-right: 33.33%; */
+  /* margin-bottom: 50%; */
+  /* padding-bottom: 100%; */
+  /* padding-top: 1%; */
+  width: 400px;
+  /* height: 100%; */
+
+  /* z-index: 1; */
+
+}
+
+
+section.spacer {
+  padding-top: 18%;
+  background-color: #003E7E;
+  z-index: 3;
+  width: 100%;
+}
+
+section.new-tweet {
+  background-color: #0059b3;
+  border-radius: 25px;
+  color: #ffffff;
+  padding-top: 3%;
+  padding-bottom: 6%;
+  /* border-top-left-radius: inherit;
+  border-top-right-radius: inherit; */
+  border: 1px solid #38444d;
+}
+
+h2.composeTitle {
+  border-bottom: 1px solid black;
+  font-size: 130%;
+  margin-right: 3.4%;
+  margin-top: 1%;
+  margin-bottom: 2.5%;
+  margin-left: 3%;
+  padding-left: 1%;
+}
+
+textarea.tweetText {
+
+  width: 94%;
+  margin-left: 3%;
+
+}
+button.button {
+  margin-right: 5%;
+  margin-left: 3%;
+  margin-top: 1%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #003E7E;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-radius: inherit;
+  border: 1px solid #38444d;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 100%;
+  padding: 6px;
+  width: 18%;
+  transition: all 0.5s;
+  cursor: pointer;
+  /* margin: 5px; */
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#count {
+  float: right;
+  margin-right: 4%;
+}

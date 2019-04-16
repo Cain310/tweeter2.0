@@ -1,0 +1,29 @@
+nav {
+    position: fixed;
+    top: 0;
+    height: 65px;
+    width: 100%;
+    background-color: #0059b3;
+    color: #ffffff;
+    padding-left: 2em;
+    padding-right: 2em;
+    /* float: left; */
+    font-family: 'Roboto Condensed', sans-serif;
+    /* z-index: 1; */
+    position: fixed;
+
+    }
+
+    img.logo {
+    float: left;
+    height: 94%;
+    width: 7%;
+}
+span.header {
+    margin-top: 1.2%;
+    position: fixed;
+    padding-left: 10px;
+    /* padding-top: 2.5%; */
+    font-size: 200%;
+
+}
