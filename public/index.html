@@ -1,45 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i" rel="stylesheet">
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i" rel="stylesheet">
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-  <body>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/Toronto_Maple_Leafs.png" width="80px" height="80px">
-      <span class="header">~ Leafer</span>
-    </nav>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="spacer">.</section>
-      <section class="new-tweet">
-      <h2 class="composeTitle">Compose Leaf</h2>
+</head>
+
+<body>
+
+  <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+    <img class="logo" src="/images/Toronto_Maple_Leafs.png" width="80px" height="80px">
+    <span class="header">~ Leafer</span>
+    <button type="submit" value="Compose" class="composeTweet"><span>Compose </span></button>
+  </nav>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="spacer">.</section>
+    <section class="new-tweet">
+      <h2 id="errorMessage" class="composeTitle">Compose Leaf</h2>
       <form method="POST" action="/tweets" class="submitForm">
-      <div><textarea name="text" type="text" class="tweetText" id="countstroke"
-          placeholder="What are you humming about?"></textarea></div>
+        <textarea name="text" type="text" class="tweetText" id="countstroke"
+          placeholder="What are you humming about?"></textarea>
         <button class="button" style="vertical-align:middle" type="submit" value="Tweet"><span>Send </span></button>
         <span class="counter" id="count">140</span>
       </form>
     </section>
-    </main>
+    <section class="tweets">
+      <article class="tweet">
+        <header class="tweetHeader">
+          <div class="avatar"></div>
+          <div class="userName"></div>
+          <p class="userHandle"></p>
+        </header>
+        <main>
+          <p class="tweetText">tweet text</p>
+        </main>
+        <footer>
+          <h5 class="footer"></h5>
+        </footer>
+      </article>
+    </section>
+  </main>
 
-  </body>
+</body>
+
 </html>

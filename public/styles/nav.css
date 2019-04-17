@@ -1,7 +1,7 @@
 nav {
     position: fixed;
     top: 0;
-    height: 65px;
+    height: 77px;
     width: 100%;
     background-color: #0059b3;
     color: #ffffff;
@@ -9,21 +9,82 @@ nav {
     padding-right: 2em;
     /* float: left; */
     font-family: 'Roboto Condensed', sans-serif;
-    /* z-index: 1; */
+    z-index: 1;
     position: fixed;
-
+    display: flex;
     }
 
     img.logo {
     float: left;
-    height: 94%;
-    width: 7%;
+    height: 75px;
+    /* width: 7.4%; */
 }
 span.header {
-    margin-top: 1.2%;
-    position: fixed;
-    padding-left: 10px;
+    margin-top: 20px;
+    /* position: fixed; */
+    padding-left: 9px;
     /* padding-top: 2.5%; */
     font-size: 200%;
+    justify-self: flex-end;
+    /* margin-left: auto; */
 
+}
+
+button.composeTweet {
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #003E7E;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-radius: 25px;
+  border: 1px solid #38444d;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 90%;
+  padding: 6px;
+  width: 115px;
+  /* height: 16%; */
+  transition: all 0.5s;
+  cursor: pointer;
+  /* margin: 5px; */
+  justify-self: flex-end;
+  margin-left: auto;
+  border: 1px solid #38444d;
+}
+
+button.composeTweet:hover {
+  background-color: #7a0000;
+  color: #ffffff;
+  border: 1px solid #38444d;
+}
+
+button.composeTweet span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button.composeTweet span:after {
+  color: #ffffff;
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button.composeTweet:hover span {
+  color: #ffffff;
+  padding-right: 25px;
+}
+
+button.composeTweet:hover span:after {
+  opacity: 1;
+  right: 0;
 }
