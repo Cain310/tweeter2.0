@@ -7,7 +7,6 @@ nav {
     color: #ffffff;
     padding-left: 2em;
     padding-right: 2em;
-    /* float: left; */
     font-family: 'Roboto Condensed', sans-serif;
     z-index: 1;
     position: fixed;
@@ -17,16 +16,12 @@ nav {
     img.logo {
     float: left;
     height: 75px;
-    /* width: 7.4%; */
 }
 span.header {
     margin-top: 20px;
-    /* position: fixed; */
     padding-left: 9px;
-    /* padding-top: 2.5%; */
     font-size: 200%;
     justify-self: flex-end;
-    /* margin-left: auto; */
 
 }
 
@@ -47,18 +42,16 @@ button.composeTweet {
   font-size: 90%;
   padding: 6px;
   width: 115px;
-  /* height: 16%; */
   transition: all 0.5s;
   cursor: pointer;
-  /* margin: 5px; */
   justify-self: flex-end;
   margin-left: auto;
-  border: 1px solid #38444d;
+  border: 1px solid #990000;
 }
 
 button.composeTweet:hover {
-  background-color: #7a0000;
-  color: #ffffff;
+  /* background-color: #7a0000; */
+  color: #7a0000;
   border: 1px solid #38444d;
 }
 
