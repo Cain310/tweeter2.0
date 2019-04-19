@@ -1,6 +1,15 @@
 
 
 $(document).ready(function () {
+  $(':button[type="submit"]').prop('disabled', true);
+  $('textarea[type="text"]').keyup(function () {
+    console.log($(this).val())
+    if ($(this).val().length === 0 || $(this).val().length > 140) {
+      $(':button[type="submit"]').prop('disabled', true);
+    } else {
+      $(':button[type="submit"]').prop('disabled', false);
+    }
+  });
 
   function escape(str) {
     const div = document.createElement('div');
@@ -17,7 +26,7 @@ $(document).ready(function () {
         </header>
           <p class="tweetText">${escape(tweet.content.text)}</p>
           <footer>
-          <h5 class="footer">${tweet.created_at}</h5>
+          <h5 class="footer">${jQuery.timeago(tweet.created_at)}</h5>
         </footer>
         </article>`;
   }
@@ -39,7 +48,7 @@ $(document).ready(function () {
 
   $(".composeTweet").click(function () {
     $(".new-tweet").toggle("slow", function () {
-      $("#countstroke").select();
+      $("#countstroke").focus();
     })
   });
 
