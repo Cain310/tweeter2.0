@@ -18,7 +18,7 @@ module.exports = function makeDataHelpers(db) {
       })
     },
     retrieveUser: function (email, callback) {
-      console.log("email", email)
+      // console.log("email", email)
       db.collection("tweeterUsers").findOne({ email: email }).then(function (user) {
         console.log("users", user)
         callback(user)
