@@ -50,7 +50,6 @@ button.composeTweet {
 }
 
 button.composeTweet:hover {
-  /* background-color: #7a0000; */
   color: #7a0000;
   border: 1px solid #38444d;
 }
@@ -80,4 +79,64 @@ button.composeTweet:hover span {
 button.composeTweet:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+button.showLogin {
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #003E7E;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-radius: 25px;
+  border: 1px solid #38444d;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 90%;
+  padding: 6px;
+  width: 115px;
+  transition: all 0.5s;
+  cursor: pointer;
+  justify-self: flex-end;
+  margin-left: auto;
+  border: 1px solid #990000;
+}
+
+button.showLogin:hover {
+  color: #7a0000;
+  border: 1px solid #38444d;
+}
+
+button.showLogin span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button.showLogin span:after {
+  color: #ffffff;
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button.showLogin:hover span {
+  color: #ffffff;
+  padding-right: 25px;
+}
+
+button.showLogin:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+form.login {
+  display: none;
 }

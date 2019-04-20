@@ -37,6 +37,7 @@ section.new-tweet {
   padding-top: 3%;
   padding-bottom: 6%;
   border: 1px solid #ffffff;
+  display: none;
 }
 
 section.new-tweet:hover {

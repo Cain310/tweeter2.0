@@ -28,6 +28,14 @@
     <img class="logo" src="/images/Toronto_Maple_Leafs.png" width="80px" height="80px">
     <span class="header">~ Leafer</span>
     <button type="submit" value="Compose" class="composeTweet"><span>Compose </span></button>
+    <button type="submit" value="Compose" class="showLogin"><span>Login </span></button>
+    <form class="login" action="/users/login" method="POST"><span>Login Eventually</span>
+      <div class="form-group mb-2"></div>
+      <input class="emailTextArea" type="email" name="email" placeholder="Enter email here" />
+      <input class="form-control" type="password" name="password" placeholder="Enter password here" />
+      <button style="color: red; width: 80px; margin: .6em;" type="submit" class="loginButton">Submit</button>
+      </div>
+    </form>
   </nav>
   <main class="container">
     <section class="spacer">.</section>

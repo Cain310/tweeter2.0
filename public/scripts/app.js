@@ -51,6 +51,12 @@ $(document).ready(function () {
     })
   });
 
+  $(".showLogin").click(function () {
+    $(".login").toggle("slow", function () {
+      $(".emailTextArea").focus();
+    })
+  });
+
   function loadTweets() {
     $.ajax('/tweets', { method: 'GET' })
       .done(function (data) {

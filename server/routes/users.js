@@ -6,43 +6,48 @@ const usersRoutes = express.Router();
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
 
-// // app.use(
-// //   cookieSession({
-// //     name: "session",
-// //     keys: ["key1s", "key2s"]
-// //   })
-// // );
+usersRoutes.use(
+  cookieSession({
+    name: "session",
+    keys: ["key1s", "key2s"]
+  })
+);
 
 usersRoutes.use(bodyParser.urlencoded({ extended: true }));
 
 module.exports = function (DataHelpers) {
 
-  usersRoutes.get("/login", (req, res) => {
-    const user = DataHelpers.retrieveUser(req.params.email, function (data) {
-      console.log(data)
+  usersRoutes.post("/login", (req, res) => {
+    DataHelpers.retrieveUser(req.body.email, function (user) {
+      console.log("retrievedUser", user)
+      if (user) {
+        req.session["userID"] = user["_id"];
+        res.redirect("/");
+      } else {
+        res.status(400).send("THOU shalt not pass");
+      }
     });
-    if (user) {
-      req.session.userId = user.id;
-      res.redirect("/");
-    } else {
-      res.status(400).send("THOU shalt not pass");
-    }
   });
 
-  // usersRoutes.post("/login", (req, res) => {
-  //   if (!req.body.email || !req.body) {
-  //     res.status(400).json({ error: 'invalid request: no data in POST body' });
-  //     return;
-  //   }
+  usersRoutes.post("/", (req, res) => {
+    console.log("registerUser")
+    if (!req.body.email || !req.body) {
+      res.status(400).json({ error: 'invalid request: no data in POST body' });
+      return;
+    }
+    const user = {
+      email: req.body.email,
+      password: req.body.password
+    }
 
-  //   DataHelpers.saveTweet(tweet, (err) => {
-  //     if (err) {
-  //       res.status(500).json({ error: err.message });
-  //     } else {
-  //       res.status(201).send();
-  //     }
-  //   });
-  // });
-
+    DataHelpers.saveUser(user, (err) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        console.log("Success")
+        res.status(201).send();
+      }
+    });
+  });
   return usersRoutes;
 }

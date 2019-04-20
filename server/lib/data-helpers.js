@@ -18,11 +18,14 @@ module.exports = function makeDataHelpers(db) {
       })
     },
     retrieveUser: function (email, callback) {
-      db.collection("tweeterUsers").find().toArray(function (err, users) {
-        console.log("users", users)
-        callback(users)
+      console.log("email", email)
+      db.collection("tweeterUsers").findOne({ email: email }).then(function (user) {
+        console.log("users", user)
+        callback(user)
       })
-
+    },
+    saveUser: function (user, callback) {
+      db.collection("tweeterUsers").insertOne(user, callback);
     }
   }
 };
