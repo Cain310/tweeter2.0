@@ -4,6 +4,7 @@ Leafer is a simple, single-page Twitter clone.
 
 ## Final App
 ![Home Page](https://github.com/Cain310/tweeter2.0/blob/master/docs/leafer_pic1.png)
+![Home Page](https://github.com/Cain310/tweeter2.0/blob/master/docs/Leafer_pic2.png)
 
 ## Getting Started
 
