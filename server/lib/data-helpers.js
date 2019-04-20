@@ -16,6 +16,13 @@ module.exports = function makeDataHelpers(db) {
       db.collection("tweeter").find().toArray(function (err, tweets) {
         callback(null, tweets)
       })
+    },
+    retrieveUser: function (email, callback) {
+      db.collection("tweeterUsers").find().toArray(function (err, users) {
+        console.log("users", users)
+        callback(users)
+      })
+
     }
   }
 };

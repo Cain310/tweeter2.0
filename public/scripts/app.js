@@ -1,13 +1,12 @@
 
 
 $(document).ready(function () {
-  $(':button[type="submit"]').prop('disabled', true);
-  $('textarea[type="text"]').keyup(function () {
-    console.log($(this).val())
+  $('#count').prop('disabled', true);
+  $('#count').keyup(function () {
     if ($(this).val().length === 0 || $(this).val().length > 140) {
-      $(':button[type="submit"]').prop('disabled', true);
+      $('#count').prop('disabled', true);
     } else {
-      $(':button[type="submit"]').prop('disabled', false);
+      $('#count').prop('disabled', false);
     }
   });
 
