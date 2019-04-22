@@ -1,21 +1,23 @@
 
-
+//tweet button lockup on conditions
 $(document).ready(function () {
-  $('#count').prop('disabled', true);
-  $('#count').keyup(function () {
+  $('button.button').prop('disabled', true);
+  $('#countstroke').keyup(function () {
     if ($(this).val().length === 0 || $(this).val().length > 140) {
-      $('#count').prop('disabled', true);
+      $('button.button').prop('disabled', true);
     } else {
-      $('#count').prop('disabled', false);
+      $('button.button').prop('disabled', false);
     }
   });
 
+  //app security feature
   function escape(str) {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+  //tweet generation
   function createTweetElement(tweet) {
     return `<article class="tweet">
         <header class="tweetHeader">
@@ -30,6 +32,7 @@ $(document).ready(function () {
         </article>`;
   }
 
+  //renders tweets to page
   function renderTweets(tweets) {
     $("section.tweets").empty()
     for (let tweet of tweets) {
@@ -38,6 +41,7 @@ $(document).ready(function () {
     }
   }
 
+  //submit tweet functionality
   $("button.button").click((event) => {
     event.preventDefault();
     let form = $(".submitForm");
@@ -45,18 +49,21 @@ $(document).ready(function () {
     $.ajax('/tweets', { method: 'POST', data: formSerial }).then(loadTweets)
   });
 
+  //nav bar compose tweet toggle button
   $(".composeTweet").click(function () {
     $(".new-tweet").toggle("slow", function () {
       $("#countstroke").focus();
     })
   });
 
+  //login button toggle
   $(".showLogin").click(function () {
     $(".login").toggle("slow", function () {
       $(".emailTextArea").focus();
     })
   });
 
+  //ajax get request to database
   function loadTweets() {
     $.ajax('/tweets', { method: 'GET' })
       .done(function (data) {
