@@ -3,10 +3,8 @@
 $(document).ready(function () {
   $('button.button').css("cursor", "not-allowed");
   $('button.span').css("cursor", "not-allowed");
-  $('button.button').prop('disabled', true);
   $('#countstroke').keyup(function () {
     if ($(this).val().length === 0 || $(this).val().length > 140) {
-      $('button.button').prop('disabled', true);
       $('button.button').css("cursor", "not-allowed");
       $('button.span').css("cursor", "not-allowed");
     } else {
@@ -53,6 +51,11 @@ $(document).ready(function () {
   //submit tweet functionality
   $("button.button").click((event) => {
     event.preventDefault();
+    if ($("#countstroke").val().trim().length === 0) {
+      ($("#errorMessage").text("Please enter a Leaf!!!"));
+      ($("#errorMessage").addClass("negcountercolor"));
+      return;
+    }
     let form = $(".submitForm");
     let formSerial = form.serialize();
     $.ajax('/tweets', { method: 'POST', data: formSerial }).then(loadTweets)
