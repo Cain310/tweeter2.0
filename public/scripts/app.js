@@ -1,12 +1,18 @@
 
 //tweet button lockup on conditions
 $(document).ready(function () {
+  $('button.button').css("cursor", "not-allowed");
+  $('button.span').css("cursor", "not-allowed");
   $('button.button').prop('disabled', true);
   $('#countstroke').keyup(function () {
     if ($(this).val().length === 0 || $(this).val().length > 140) {
       $('button.button').prop('disabled', true);
+      $('button.button').css("cursor", "not-allowed");
+      $('button.span').css("cursor", "not-allowed");
     } else {
       $('button.button').prop('disabled', false);
+      $('button.button').css("cursor", "pointer");
+      $('button.span').css("cursor", "pointer");
     }
   });
 
@@ -27,6 +33,9 @@ $(document).ready(function () {
         </header>
           <p class="tweetText">${escape(tweet.content.text)}</p>
           <footer>
+          <img class="like" src="/images/outline-grade-24px.svg" width="20px" height="20px">
+          <img class="like" src="/images/baseline-share-24px.svg" width="20px" height="20px">
+          <img class="like" src="/images/baseline-comment-24px.svg" width="20px" height="20px">
           <h5 class="footer">${jQuery.timeago(tweet.created_at)}</h5>
         </footer>
         </article>`;
@@ -47,6 +56,7 @@ $(document).ready(function () {
     let form = $(".submitForm");
     let formSerial = form.serialize();
     $.ajax('/tweets', { method: 'POST', data: formSerial }).then(loadTweets)
+    $("#formReset").trigger("reset");
   });
 
   //nav bar compose tweet toggle button
